@@ -14,7 +14,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 		// Click "Skip ads" button
 		const skippableAd = document.querySelectorAll('.ytp-ad-skip-button').length;
 		if (skippableAd) {
-			document.querySelectorAll('.ytp-ad-skip-button')?.forEach((e) => e?.click());
+			Array.from(document.querySelectorAll('.ytp-ad-skip-button'))?.forEach((e) =>
+				e?.click()
+			);
 			return;
 		}
 
@@ -26,7 +28,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 			videoTag.playbackRate = 16;
 			videoTag.muted = true;
 			videoTag.currentTime = 999999999;
-			countAds++;
 		}
 	});
 
