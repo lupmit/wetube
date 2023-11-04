@@ -1,0 +1,37 @@
+{
+	"name": "WeTube",
+	"description": "Block ads on Youtube",
+	"homepage_url": "https://github.com/lupmit/wetube",
+	"manifest_version": 3,
+	"version": "1.0.0",
+
+	"icons": {
+		"16": "src/images/16.png",
+		"32": "src/images/16.png",
+		"64": "src/images/16.png",
+		"128": "src/images/16.png"
+	},
+
+	"content_scripts": [
+		{
+			"js": ["src/js/content_script.js"],
+			"css": ["src/css/index.css"],
+			"all_frames": true,
+			"matches": ["*://*.youtube.com/*"],
+			"run_at": "document_start"
+		}
+	],
+	"action": {
+		"default_icon": {
+			"16": "src/images/16.png",
+			"32": "src/images/16.png",
+			"64": "src/images/16.png",
+			"128": "src/images/16.png"
+		},
+		"default_title": "WeTube",
+		"default_popup": "src/index.html"
+	},
+	"permissions": ["storage", "tabs"],
+
+	"host_permissions": ["*://*.youtube.com/*"]
+}
