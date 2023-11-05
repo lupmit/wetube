@@ -16,7 +16,7 @@
 
 ### Installation Instructions
 
-**Google Chrome / Microsoft Edge** (Custom sites supported)
+**Google Chrome / Microsoft Edge**
 
 1. Download this repo as a [ZIP file from GitHub](https://github.com/lupmit/wetube/releases/latest).
 1. Unzip the file and you should have a folder named `wetube`.
