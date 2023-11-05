@@ -1,6 +1,6 @@
 {
-	"name": "WeTube",
-	"description": "Block ads on Youtube",
+	"name": "WeTube - Youtube AD blocker",
+	"description": "Remove all ads from Youtube. Block all of type ads on Youtube videos - Make it smooth!",
 	"homepage_url": "https://github.com/lupmit/wetube",
 	"manifest_version": 3,
 	"version": "1.0.0",
