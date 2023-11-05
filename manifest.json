@@ -3,7 +3,7 @@
 	"description": "Remove all ads from Youtube. Block all of type ads on Youtube videos - Make it smooth!",
 	"homepage_url": "https://github.com/lupmit/wetube",
 	"manifest_version": 3,
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"icons": {
 		"32": "src/images/32.png",
 		"64": "src/images/64.png",
