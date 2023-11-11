@@ -3,7 +3,7 @@ let counter = 0;
 let isSkipAds = true;
 const stylesToHideVideoAds = `.ad-container,.ad-div,.masthead-ad-control,.video-ads,.ytp-ad-progress-list,
 #ad_creative_3,#footer-ads,#masthead-ad,#player-ads,.ytd-mealbar-promo-renderer,
-#watch-channel-brand-div,#watch7-sidebar-ads,ytd-display-ad-renderer,
+#watch-channel-brand-div,#watch7-sidebar-ads,ytd-display-ad-renderer,ytd-ad-slot-renderer
 ytd-compact-promoted-item-renderer,.html5-video-player.ad-showing video 
 {
   display: none !important;
@@ -34,7 +34,15 @@ const hideVideoAds = () => {
 	}
 };
 
+const autoPauseBlocker = () => {
+	const currentDate = new Date();
+	const lactMs = currentDate.getTime();
+	window._lact = lactMs;
+};
+
 const observer = new MutationObserver((mutations) => {
+	autoPauseBlocker();
+
 	// Browser break time
 	if (counter++ % 2 === 0) {
 		counter /= 2;
@@ -46,7 +54,9 @@ const observer = new MutationObserver((mutations) => {
 	if (document.querySelector('.html5-video-player.ad-showing video')) {
 		videoTag.playbackRate = 16;
 		videoTag.muted = true;
-		videoTag.currentTime = 1e9;
+		videoTag.currentTime = isNaN(videoTag.duration)
+			? 1e9
+			: Math.ceil(videoTag.duration);
 	}
 
 	// Click close ads overlay
@@ -54,6 +64,9 @@ const observer = new MutationObserver((mutations) => {
 
 	// Click "Skip ads" button
 	document.querySelectorAll('.ytp-ad-skip-button')?.forEach((e) => e?.click());
+
+	// Click "No thanks" button
+	document.querySelector('[aria-label="No thanks"]')?.forEach((e) => e?.click());
 });
 
 document.addEventListener('DOMContentLoaded', (event) => {
