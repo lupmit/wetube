@@ -15,3 +15,10 @@ const handleActionClick = () => {
 };
 
 chrome.action.onClicked.addListener(handleActionClick);
+
+chrome.runtime.onStartup.addListener(() => {
+	chrome.storage.local.get(['skipAds'], ({ skipAds }) => {
+		chrome.action.setBadgeText({ text: skipAds ? 'on' : 'off' });
+		chrome.action.setBadgeBackgroundColor({ color: skipAds ? ON_COLOR : OFF_COLOR });
+	});
+});
