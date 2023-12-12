@@ -110,12 +110,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 		if (
 			config?.time === null ||
-			Math.floor((Date.now() - new Date(config.time)) / (1000 * 60 * 60 * 24))
+			Math.floor((Date.now() - new Date(config.time)) / (1000 * 60 * 60))
 		) {
 			getConfig();
 		}
 	}, 1000);
 
-	// Listen DOM is changed
+	// listen DOM is changed
 	observer.observe(document.body, { subtree: true, childList: true });
 });
