@@ -1,4 +1,6 @@
 {
-	"videoElment": ".html5-video-player.ad-showing video",
-	"buttonSkipElement": ".ytp-ad-skip-button-modern"
+	"video": ".html5-video-player.ad-showing video",
+	"hide": [],
+	"click": [".ytp-ad-skip-button-modern"],
+	"time": null
 }
