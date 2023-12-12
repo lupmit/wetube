@@ -1,6 +1,6 @@
 {
 	"video": ".html5-video-player.ad-showing video",
-	"hide": [],
+	"hide": ["ytd-banner-promo-renderer"],
 	"click": [".ytp-ad-skip-button-modern"],
 	"time": null
 }
