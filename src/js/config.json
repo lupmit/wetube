@@ -1,0 +1,4 @@
+{
+	"videoElment": ".html5-video-player.ad-showing video",
+	"buttonSkipElement": ".ytp-ad-skip-button-modern"
+}
